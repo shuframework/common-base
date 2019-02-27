@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 重写了equals()和hashCode() 并且实现Serializable接口 的pojo
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public class BookInfo5 implements Serializable {

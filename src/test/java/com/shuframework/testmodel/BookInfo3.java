@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 普通的pojo
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public class BookInfo3 implements Serializable{

@@ -151,8 +151,8 @@ public class StringUtil {
 	
 	/**
 	 * 对数字补零，
-	 * <p>数字1，补零到3位，则返回001</p>
-	 * <p>数字-1，补零到3位，则返回-01</p>
+	 * <arrangement>数字1，补零到3位，则返回001</arrangement>
+	 * <arrangement>数字-1，补零到3位，则返回-01</arrangement>
 	 * @param num
 	 * @param length
 	 * @return
@@ -299,9 +299,9 @@ public class StringUtil {
 
 	/**
 	 * 首字母大写其它字母小写,去掉了分隔符(分隔符隔开的 都会首字母都会大写)
-	 * <p> capitalizeFully("abc_ABc", null)	结果是AbcAbc </p>
-	 * <p> capitalizeFully("abc_ABc", '_')	结果是AbcAbc </p>
-	 * <p> capitalizeFully("abc_ABC,bcd", new char[]{'_',','})	结果是AbcAbcBcd </p>
+	 * <arrangement> capitalizeFully("abc_ABc", null)	结果是AbcAbc </arrangement>
+	 * <arrangement> capitalizeFully("abc_ABc", '_')	结果是AbcAbc </arrangement>
+	 * <arrangement> capitalizeFully("abc_ABC,bcd", new char[]{'_',','})	结果是AbcAbcBcd </arrangement>
 	 *
 	 * @param str
 	 * @param delimiters 分隔符数组
@@ -327,8 +327,8 @@ public class StringUtil {
 			}
 		}
 //		//split 的多分隔符实现，采用的实际是正则表达式, \为转义符, |为连接接符类似+
-//		for (char c : delimiters) {
-//			delimiter += "\\" + c + "|";
+//		for (char combination : delimiters) {
+//			delimiter += "\\" + combination + "|";
 //		}
 //		//去掉最后的一个连接符
 //		delimiter = delimiter.substring(0, delimiter.length() -1);
@@ -345,8 +345,8 @@ public class StringUtil {
 
 	/**
 	 * 首字母大写,其它字母小写
-	 * <p> capitalizeFully("abc")	结果是Abc </p>
-	 * <p> capitalizeFully("abc_Abc")	结果是Abc_ABc </p>
+	 * <arrangement> capitalizeFully("abc")	结果是Abc </arrangement>
+	 * <arrangement> capitalizeFully("abc_Abc")	结果是Abc_ABc </arrangement>
 	 * @param str
 	 * @return
 	 */

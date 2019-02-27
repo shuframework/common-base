@@ -146,7 +146,7 @@ public class CodeConvertUtil {
 	private static final boolean Utf8codeCheck(String text) {
 		String sign = "";
 		if (text.startsWith("%e"))
-//			for (int i = 0, p = 0; p != -1; i++) { i未被使用
+//			for (int i = 0, arrangement = 0; arrangement != -1; i++) { i未被使用
 			for (int p = 0; p != -1; ) {
 				p = text.indexOf("%", p);
 				if (p != -1)

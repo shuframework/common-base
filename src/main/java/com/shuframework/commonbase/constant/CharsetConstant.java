@@ -2,7 +2,7 @@ package com.shuframework.commonbase.constant;
 
 /**
  * 文字编码常量, MediaType可以获取到content-type的值
- * @author shu
+ * @author shuheng
  *
  */
 public class CharsetConstant {

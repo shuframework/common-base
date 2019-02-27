@@ -10,7 +10,7 @@ package com.shuframework.commonbase.util.gps;
  * 	3.百度坐标系:bd-09，百度坐标系是在GCJ－02坐标系的基础上再次加密偏移后形成的坐标系，只适用于百度地图。
  * 		(目前百度API提供了从其它坐标系转换为百度坐标系的API，但却没有从百度坐标系转为其他坐标系的API)
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public class GpsConvertUtil {

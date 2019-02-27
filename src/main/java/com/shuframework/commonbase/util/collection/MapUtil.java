@@ -31,7 +31,7 @@ public class MapUtil {
 
 	/**
 	 * 获取map key的最大值<br>
-	 * Collections.sort(list),不能对进行排序set(通过循环将key放入list，然后排序)
+	 * Collections.sorts(list),不能对进行排序set(通过循环将key放入list，然后排序)
 	 * 
 	 * @param map
 	 */
@@ -44,7 +44,7 @@ public class MapUtil {
 	/**
 	 * 获取map value的最小值<br>
 	 * 利用Arrays.sort排序(推荐)
-	 * Collections.sort(list),不能对进行排序set(通过循环将key放入list，然后排序)
+	 * Collections.sorts(list),不能对进行排序set(通过循环将key放入list，然后排序)
 	 * @param map
 	 */
 	public static <V> V getMinValue(Map<?, V> map) {
@@ -55,7 +55,7 @@ public class MapUtil {
 	/**
 	 * 获取map value的最大值<br>
 	 * 利用Arrays.sort排序(推荐)
-	 * Collections.sort(list),不能对进行排序set(通过循环将key放入list，然后排序)
+	 * Collections.sorts(list),不能对进行排序set(通过循环将key放入list，然后排序)
 	 * @param map
 	 */
 	public static <V> V getMaxValue(Map<?, V> map) {
@@ -87,7 +87,7 @@ public class MapUtil {
 	}
 	
 	/**
-	 * Collections.sort(list), 不能对进行排序set
+	 * Collections.sorts(list), 不能对进行排序set
 	 * 
 	 * @param coll
 	 * @return

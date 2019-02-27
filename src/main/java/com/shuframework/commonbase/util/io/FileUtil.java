@@ -445,10 +445,10 @@ public class FileUtil {
 	 * <pre>
 	 * 目录 d:\\filetest\\a
 	 * 		b
-	 * 			c
+	 * 			combination
 	 * 			b.txt
 	 * 		a.txt
-	 * 删除目录d:\\filetest\\a (文件夹) ,那么其下的所有文件都会删除, 文件夹（b、c）都未被删除
+	 * 删除目录d:\\filetest\\a (文件夹) ,那么其下的所有文件都会删除, 文件夹（b、combination）都未被删除
 	 * </pre>
 	 * @param file
 	 * @return
@@ -485,10 +485,10 @@ public class FileUtil {
 	 * <pre>
 	 * 目录 d:\\filetest\\a
 	 * 		b
-	 * 			c
+	 * 			combination
 	 * 			b.txt
 	 * 		a.txt
-	 * 删除目录d:\\filetest\\a (文件夹) ,那么其下的所有文件和文件夹（b、c）都会删除
+	 * 删除目录d:\\filetest\\a (文件夹) ,那么其下的所有文件和文件夹（b、combination）都会删除
 	 * </pre>
 	 * 
 	 * @param file

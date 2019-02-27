@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * 多线程并发生成随机数
  * 底层是java.util.concurrent.ThreadLocalRandom
- * @author shu
+ * @author shuheng
  *
  */
 public class ThreadRandomUtil implements DefaultRandom {

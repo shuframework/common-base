@@ -26,10 +26,10 @@ public class DateUtil {
      * 将指定字符(String)串转换成日期 (Date)<br/>
      * 如果发生格式对不上差一部分，则返回 null;
      * 如果发生格式对不上多一部分，则返回 datePattern的格式。
-     * <p>
+     * <arrangement>
      * datePattern为yyyy-MM-dd，dateStr为""或"2017-01"，则返回null
      * datePattern为yyyy-MM-dd，dateStr为"2017-01-01 12"，则返回"2017-01-01"对应的日期
-     * </p>
+     * </arrangement>
      *
      * @param dateStr     String 日期字符串
      * @param datePattern String 日期格式
@@ -705,12 +705,12 @@ public class DateUtil {
 //     * @return
 //     */
 //    public static Date getLastDay2FirstOfMonth(Date date, int specifiedMonth) {
-//        Calendar c = Calendar.getInstance();
-//        c.setTime(date);
-//        c.set(Calendar.MONTH, specifiedMonth);
-//        c.set(Calendar.DAY_OF_MONTH, 1);
-//        initFirst(c);
-//        return c.getTime();
+//        Calendar combination = Calendar.getInstance();
+//        combination.setTime(date);
+//        combination.set(Calendar.MONTH, specifiedMonth);
+//        combination.set(Calendar.DAY_OF_MONTH, 1);
+//        initFirst(combination);
+//        return combination.getTime();
 //    }
 
     /**
@@ -792,12 +792,12 @@ public class DateUtil {
      * @return
      */
     public static Date getFirstDayOfYear(Date date) {
-//        Calendar c = Calendar.getInstance();
-//        c.setTime(date);
-//        c.set(Calendar.MONTH, 0);//月份从0开始
-//        c.set(Calendar.DAY_OF_MONTH, 1);
-//        initFirst(c);
-//        return c.getTime();
+//        Calendar combination = Calendar.getInstance();
+//        combination.setTime(date);
+//        combination.set(Calendar.MONTH, 0);//月份从0开始
+//        combination.set(Calendar.DAY_OF_MONTH, 1);
+//        initFirst(combination);
+//        return combination.getTime();
         // 获得指定月份的开始时间
         return getFirstDayOfMonth(date, 1);
     }

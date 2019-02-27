@@ -2,7 +2,7 @@ package com.shuframework.testmodel;
 
 /**
  * BookInfo的子类
- * @author shu
+ * @author shuheng
  *
  */
 public class SubBookInfo extends BookInfo {

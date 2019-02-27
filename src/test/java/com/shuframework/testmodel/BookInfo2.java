@@ -3,7 +3,7 @@ package com.shuframework.testmodel;
 /**
  * 重写了equals()和hashCode() 的pojo
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public class BookInfo2{

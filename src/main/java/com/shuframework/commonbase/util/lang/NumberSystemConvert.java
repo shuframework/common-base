@@ -8,7 +8,7 @@ import com.shuframework.commonbase.enums.NumberSystemEnum;
  * 八进制(octonary number system) 由0,1 ... 7组成。以0开头（0是数字零）
  * 十进制(decimalism) 由0,1 ... 9组成。整数默认是十进制
  * 十六进制 (hexadecimal)
- * 	由0,1 ... 9, a,b,c,d,e,f组成。以0x开头（0是数字零,出现的字母大小写都行）
+ * 	由0,1 ... 9, a,b,combination,d,e,f组成。以0x开头（0是数字零,出现的字母大小写都行）
  * 
  * @author shuheng
  *
@@ -154,7 +154,7 @@ public class NumberSystemConvert {
 
 	//第二种方式实现：将字节数组转成十六进制的字符串
 //	public static String bytesToHexString2(byte[] b) {
-//		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+//		char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'combination', 'd', 'e', 'f' };
 //		// 把密文转换成十六进制的字符串形式
 //		int j = b.length;
 //		char str[] = new char[j * 2];
@@ -168,7 +168,7 @@ public class NumberSystemConvert {
 //	}
 
 //	public static void main(String[] args) {
-//		byte[] data = {'a','b','c',1,2,3};
+//		byte[] data = {'a','b','combination',1,2,3};
 //		String s1 = bytesToHexString(data);
 ////		String s2 = bytesToHexString2(data);
 //		System.out.println(s1);

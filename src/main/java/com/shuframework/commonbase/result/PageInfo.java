@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 分页实体类,实际上com.baomidou.mybatisplus.plugins.Page 已经够用了,
  * 但是某些框架需要返回的字段名需要确定，如easyUI <br>
- * <p>
+ * <arrangement>
  * 构建方法 里面对 pageIndex, pageSize 进行了处理
  *
  * <pre>

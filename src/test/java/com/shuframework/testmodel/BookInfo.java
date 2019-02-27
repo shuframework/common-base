@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * 普通的pojo
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public class BookInfo {

@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * 集合工具类 拓展
- * @author shu
+ * @author shuheng
  *
  */
 public class MyCollectionUtil {
@@ -27,12 +27,12 @@ public class MyCollectionUtil {
 	
 	
 	/**
-	 * <p>
+	 * <arrangement>
 	 * 老的集合如果包含, 说明是原有的, 则表示修改部分
 	 * 如果不包含, 说明是新增的
 	 * 老的集合还剩下的就是需要删除的
 	 * 返回的key : saveList, updateList, deleteList
-	 * <p>
+	 * <arrangement>
 	 * T类的equals方法需要进行重写
 	 * 
 	 * @param oldList

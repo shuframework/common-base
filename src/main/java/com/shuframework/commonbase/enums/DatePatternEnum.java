@@ -3,7 +3,7 @@ package com.shuframework.commonbase.enums;
 /**
  * 进制的枚举
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public enum DatePatternEnum {

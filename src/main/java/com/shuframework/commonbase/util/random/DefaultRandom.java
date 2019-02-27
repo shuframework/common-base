@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * 产生随机数的接口，使用了默认实现
  *
- * @author shu
+ * @author shuheng
  */
 public interface DefaultRandom {
 

@@ -4,7 +4,7 @@ import com.shuframework.commonbase.exception.UtilException;
 
 /**
  * 
- * @author shu
+ * @author shuheng
  *
  */
 public class ClassUtil {
