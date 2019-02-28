@@ -1,6 +1,6 @@
-package com.shuframework.jdbc;
+package com.shuframework.commonbase.jdbc;
 
-import com.shuframework.remake.myutil.MyBeanUtil;
+import com.shuframework.commonbase.util.reflect.MyBeanUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
