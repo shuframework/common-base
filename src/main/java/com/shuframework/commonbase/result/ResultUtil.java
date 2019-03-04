@@ -58,6 +58,32 @@ public class ResultUtil {
 		return success(null);
     }
 
+    /**
+     * 新增成功
+     * @param data
+     * @return
+     */
+    public static Result successOfInsert(Object data) {
+        return success(ADD_OK, data);
+    }
+
+    /**
+     * 修改成功
+     * @param data
+     * @return
+     */
+    public static Result successOfUpdate(Object data) {
+        return success(UPDATE_OK, data);
+    }
+
+    /**
+     * 删除成功
+     * @param data
+     * @return
+     */
+    public static Result successOfDelete(Object data) {
+        return success(DELETE_OK, data);
+    }
 
     /**
      * 请求失败
