@@ -35,7 +35,7 @@ public enum FailureEnum {
 //////===== 401xx 请求要求身份验证(请求参数检查)
     //缺少xx参数时，重写msg 即可
   	PARAMETER_FAILURE(40101, "参数错误"),
-    
+
   	//也可叫 notfind
 	NOTEXIST_FAILURE(40110, "不存在的信息错误"),
 	//不推荐, 建议是覆盖NOTEXIST_FAILURE 的msg
@@ -62,10 +62,13 @@ public enum FailureEnum {
 	
 	//业务限制流转的验证
 	BUSINESS_FLOW_FAILURE(40351, "业务错误"),
-	
-	
-//////===== 404xx 	
-	OPERATION_FAILURE(40400,"操作失败, 请重试"),
+
+
+//////===== 404xx
+	REQUEST_FAILURE(40400, "请求异常, 请重试"),
+
+	//////===== 500xx 后端错误
+	OPERATION_FAILURE(50001, "操作失败, 请重试或检查参数"),
 
 	//////===== 501xx	异常
 	UNKNOWN_ERROR(50101, "未知错误");
