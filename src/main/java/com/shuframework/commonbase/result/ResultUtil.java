@@ -27,6 +27,10 @@ public class ResultUtil {
     public static final String DELETE_OK = "删除成功";
     public static final String OPERATE_OK = "操作成功";
 
+    public static final String ADD_FAIL = "添加失败";
+    public static final String UPDATE_FAIL = "修改失败";
+    public static final String DELETE_FAIL = "删除失败";
+
 
     /**
      * 请求成功，返回msg,data为参数具体值
@@ -131,6 +135,31 @@ public class ResultUtil {
         return failure(failureEnum, null);
     }
 
+    /**
+     * 新增失败
+     * @return
+     */
+    public static Result failureOfInsert(Object data) {
+        return failure(FailureEnum.OPERATION_FAILURE, ADD_FAIL, data);
+    }
+
+    /**
+     * 修改失败
+     * @param data
+     * @return
+     */
+    public static Result failureOfUpdate(Object data) {
+        return failure(FailureEnum.OPERATION_FAILURE, UPDATE_FAIL, data);
+    }
+
+    /**
+     * 删除成功
+     * @param data
+     * @return
+     */
+    public static Result failureOfDelete(Object data) {
+        return failure(FailureEnum.OPERATION_FAILURE, DELETE_FAIL, data);
+    }
 
     /**
      * 请求出错
