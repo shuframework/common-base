@@ -29,27 +29,25 @@ public class PageConvert {
 	private String sortAndOrder; 
 
 	public Integer getPageIndex() {
-		return pageIndex;
+		if (pageIndex == null || pageIndex <= 0) {
+			this.pageIndex = PAGE_INDEX_DEFAULT;
+		}
+		return this.pageIndex;
 	}
 
 	public void setPageIndex(Integer pageIndex) {
-		if (pageIndex == null || pageIndex <= 0) {
-            this.pageIndex = PAGE_INDEX_DEFAULT;
-        } else {
-            this.pageIndex = pageIndex;
-        }
+		this.pageIndex = pageIndex;
 	}
 
 	public Integer getPageSize() {
-		return pageSize;
+		if (pageSize == null || pageSize <= 0) {
+			this.pageSize = PAGE_SIZE_DEFAULT;
+		}
+		return this.pageSize;
 	}
 
 	public void setPageSize(Integer pageSize) {
-		if (pageSize == null || pageSize <= 0) {
-            this.pageSize = PAGE_SIZE_DEFAULT;
-        } else {
-            this.pageSize = pageSize;
-        }
+		this.pageSize = pageSize;
 	}
 
 	public String getSortName() {
