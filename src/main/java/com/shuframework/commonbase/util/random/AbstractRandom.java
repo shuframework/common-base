@@ -2,22 +2,17 @@ package com.shuframework.commonbase.util.random;
 
 import com.shuframework.commonbase.util.lang.StringUtil;
 
-import java.util.Random;
-
 /**
- * 产生随机数的接口，使用了默认实现
- * 也可以定义为 抽象类
- *
+ * static与abstract 不能同时使用
  * @author shuheng
  */
-public interface DefaultRandom {
+public abstract class AbstractRandom {
 
     /** int类型的长度限制为10（不超过9个）*/
     int LIMIT_INT_LENGTH = 10;
 
     // 使用到Algerian字体，系统里没有的话需要安装字体，字体只显示大写，去掉了1,0,i,o几个容易混淆的字符
     String VERIFY_CODES = "23456789ABCDEFGHJKMNPQRSTUVWXYZ";
-//    public static final String VERIFY_CODES = "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ";
 
 
     /**
@@ -25,7 +20,7 @@ public interface DefaultRandom {
      *
      * @param num 数字
      */
-    int random(int num);
+    protected abstract int random(int num);
 
     /**
      * 返回的范围是[start,end)
@@ -33,7 +28,7 @@ public interface DefaultRandom {
      * @param start 范围起始值
      * @param end   范围终止值
      */
-    default int random(int start, int end) {
+    protected int random(int start, int end) {
 //		return random(end - start) + start; //返回[start, end)
 //		return random(end - start + 1) + start;	//返回[start, end]
         return random(end - start) + start;
@@ -44,7 +39,7 @@ public interface DefaultRandom {
      * @param length
      * @return
      */
-    default String verifyCodeHasLetter(int length) {
+    protected String verifyCodeHasLetter(int length) {
         String sources = VERIFY_CODES;
         int codesLen = sources.length();
         StringBuilder verifyCode = new StringBuilder(length);
@@ -62,7 +57,7 @@ public interface DefaultRandom {
      *
      * @param length    几位数
      */
-    default int randomByLength2Int(int length) {
+    protected int randomByLength2Int(int length) {
         int start = 0;
         if (length == 1) {
             return random(10);
@@ -85,7 +80,7 @@ public interface DefaultRandom {
      *
      * @param length    几位数
      */
-    default String randomByLength2Str(int length) {
+    protected String randomByLength2Str(int length) {
         String randomId = "";
         int restLength = 0;
         int limitLength = LIMIT_INT_LENGTH - 1;//最多9位
@@ -116,7 +111,7 @@ public interface DefaultRandom {
      *
      * @param length	几位数
      */
-    default String randomFillZeroHasLimit(int length) {
+    protected String randomFillZeroHasLimit(int length) {
         if (length > 0 && length < LIMIT_INT_LENGTH) {
             int end = (int) Math.pow(10, length);
             int num = random(end);

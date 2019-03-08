@@ -200,7 +200,7 @@ public class BigDecimalUtil {
 		//空，或者长度小于2都报参数异常
 		checkArrLength(nums, 2);
 		
-		BigDecimal sum = BigDecimal.ZERO;
+		BigDecimal sum = BigDecimal.ONE;
 		for (String n : nums) {
 			//由于这样每次都是申明，然后创建，但测试结果差距不明显
 			sum = sum.multiply(strToBd0(n));
@@ -219,7 +219,7 @@ public class BigDecimalUtil {
 		//空，或者长度小于2都报参数异常
 		checkArrLength(nums, 2);
 		
-		BigDecimal sum = BigDecimal.ZERO;
+		BigDecimal sum = BigDecimal.ONE;
 		for (BigDecimal numBd : nums) {
 			numBd = checkBigDecimal(numBd);
 			sum = sum.multiply(numBd);//返回的是新对象, 需要重新指向其引用
