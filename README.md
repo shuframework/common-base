@@ -15,6 +15,9 @@
 ### 工厂  factory
 
 
+### 策略  strategy
+
+
 
 ### 适配  adapter
 
