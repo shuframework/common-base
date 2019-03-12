@@ -3,7 +3,7 @@ package com.shuframework.designpattern.observer;
 /**
  * 具体观察者，本身的状态与通知者的状态相协调
  */
-public class ConcreteObserverA implements Observer {
+public class ConcreteObserver implements MyObserver {
 
     private int myState;   //myState需要跟目标对象的state值保持一致！
 

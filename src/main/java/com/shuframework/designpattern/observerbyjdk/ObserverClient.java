@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.observer;
+package com.shuframework.designpattern.observerbyjdk;
 
 import org.junit.Test;
 
@@ -16,23 +16,19 @@ public class ObserverClient {
         ConcreteObserver observer2 = new ConcreteObserver();
         ConcreteObserver observer3 = new ConcreteObserver();
 
-        subject.registerObserver(observer1);
-        subject.registerObserver(observer2);
-        subject.registerObserver(observer3);
+        subject.addObserver(observer1);
+        subject.addObserver(observer2);
+        subject.addObserver(observer3);
         //移除3 即不通知它
-        subject.removeObserver(observer3);
+        subject.deleteObserver(observer3);
 
         //改变subject的状态
         subject.setState(10);
 //        //在具体的通知者里面已经调用过了，这里可以不用再次调用了
-//        subject.notifyAllObservers();
-//        System.out.println("########################");
-//        System.out.println("获取："+observer1.getMyState());
-//
-//        //改变subject的状态
-//        subject.setState(30);
-//        System.out.println("########################");
-//        System.out.println("获取："+observer1.getMyState());
+//        //表示目标对象已经做了更改
+//        subject.setChanged();
+//        //主题对象(目标对象)值发生了变化，请通知所有的观察者
+//        subject.notifyObservers();
     }
 
 }
