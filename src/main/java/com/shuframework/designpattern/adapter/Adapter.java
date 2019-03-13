@@ -1,22 +1,20 @@
-package cn.javass.dp.adapter.example1;
+package com.shuframework.designpattern.adapter;
+
 /**
- * ÊÊÅäÆ÷
+ * é€‚é…å™¨ï¼šåŸç†å°±æ˜¯ å®ç°æ¥å£è¦†ç›–å®ç°
  */
 public class Adapter implements Target {
-	/**
-	 * ³ÖÓĞĞèÒª±»ÊÊÅäµÄ½Ó¿Ú¶ÔÏó
-	 */
+
+	// æŒæœ‰éœ€è¦è¢«é€‚é…çš„æ¥å£å¯¹è±¡
 	private Adaptee adaptee;
-	/**
-	 * ¹¹Ôì·½·¨£¬´«ÈëĞèÒª±»ÊÊÅäµÄ¶ÔÏó
-	 * @param adaptee ĞèÒª±»ÊÊÅäµÄ¶ÔÏó
-	 */
+
 	public Adapter(Adaptee adaptee) {
 		this.adaptee = adaptee;
 	}
 
+	@Override
 	public void request() {
-		//¿ÉÄÜ×ªµ÷ÒÑ¾­ÊµÏÖÁËµÄ·½·¨£¬½øĞĞÊÊÅä
+		//å¯èƒ½è½¬è°ƒå·²ç»å®ç°äº†çš„æ–¹æ³•ï¼Œè¿›è¡Œé€‚é…
 		adaptee.specificRequest();
 	}
 }

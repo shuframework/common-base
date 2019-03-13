@@ -1,13 +1,15 @@
-package cn.javass.dp.adapter.example1;
+package com.shuframework.designpattern.adapter;
+
 /**
- * ÒÑ¾­´æÔÚµÄ½Ó¿Ú£¬Õâ¸ö½Ó¿ÚĞèÒª±»ÊÊÅä
+ * å·²ç»å­˜åœ¨çš„æ¥å£ éœ€è¦åŒ¹é…çš„æ¥å£
  */
 public class Adaptee {
+
 	/**
-	 * Ê¾Òâ·½·¨£¬Ô­±¾ÒÑ¾­´æÔÚ£¬ÒÑ¾­ÊµÏÖµÄ·½·¨
+	 * ç¤ºæ„æ–¹æ³•ï¼ŒåŸæœ¬å·²ç»å­˜åœ¨ï¼Œå·²ç»å®ç°çš„æ–¹æ³•
 	 */
 	public void specificRequest() {
-		//¾ßÌåµÄ¹¦ÄÜ´¦Àí
+		System.out.println("å…·ä½“çš„åŠŸèƒ½å¤„ç†");
 	}
 }
 

@@ -8,6 +8,8 @@
 ## com.shuframework.designpattern
 > 设计模式，主要是singleton(单例)、 factory(工厂)、 (装饰)、 (代理)、 (适配)等23种
 
+> 详见 doc/03-常用设计模式.md
+
 ### 单例   singleton
 
 
@@ -20,6 +22,9 @@
 
 
 ### 适配  adapter
+
+
+### 代理  proxy
 
 
 

@@ -1,6 +1,6 @@
 package com.shuframework.designpattern.adapter;
 
-public class Client {
+public class AdapterClient {
 	public static void main(String[] args) {
 		//创建需被适配的对象
 		Adaptee adaptee = new Adaptee();

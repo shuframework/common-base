@@ -3,11 +3,11 @@ package com.shuframework.designpattern.memento;
 import java.util.Date;
 
 /**
- * 普通的pojo
+ * 备忘录类
  *
  * @author shuheng
  */
-public class BookInfo {
+public class BookInfoMemento {
 
     private Integer id;
     private String name;
@@ -19,24 +19,13 @@ public class BookInfo {
     private String progress;
 
 
-    public BookInfo() {
-    }
-
-    public BookInfo(Integer id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public BookInfo(Integer id, String name, Double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-
-    public BookInfo(Integer id, String name, Date createTime) {
-        this.id = id;
-        this.name = name;
-        this.createTime = createTime;
+    //给对象进行备份操作用的
+    public BookInfoMemento(BookInfo bookInfo) {
+        this.id = bookInfo.getId();
+        this.name = bookInfo.getName();
+        this.price = bookInfo.getPrice();
+        this.createTime = bookInfo.getCreateTime();
+        this.progress = bookInfo.getProgress();
     }
 
 
@@ -83,7 +72,7 @@ public class BookInfo {
 
     @Override
     public String toString() {
-        return String.format("BookInfo [id=%s, name=%s, price=%s, createTime=%s, progress=%s]", id, name, price, createTime, progress);
+        return String.format("BookInfoMemento [id=%s, name=%s, price=%s, createTime=%s, progress=%s]", id, name, price, createTime, progress);
     }
 
 }
