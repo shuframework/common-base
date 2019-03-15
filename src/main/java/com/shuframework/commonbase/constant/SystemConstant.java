@@ -6,7 +6,7 @@ package com.shuframework.commonbase.constant;
  * @author shuheng
  *
  */
-public class CommonConstant {
+public class SystemConstant {
 
 	/** 状态：可用 */
 	public static final String DATA_ENABLE_STR = "1";
@@ -57,17 +57,8 @@ public class CommonConstant {
 	/** 降序 */
 	public static final String ORDERBY_DESC = "desc";
 
-	//放入 MenuConstant
-//	/** 菜单类型：模块 */
-//	public static final int MENU_TYPE_MODULE = 1;
-//	/** 菜单类型：菜单 */
-//	public static final int MENU_TYPE_MENU = 2;
-//	/** 菜单类型：按钮 */
-//	public static final int MENU_TYPE_BUTTON = 3;
-//
-//	/** 菜单子节点 */
-//	public static final int IS_LEAF_YES = 1;
-//	/** 菜单父节点 */
-//	public static final int IS_LEAF_NO = 0;
+
+	/** 默认密码（明文） */
+	public static final String DEFAULT_PASSWORD = "111111";
 
 }
