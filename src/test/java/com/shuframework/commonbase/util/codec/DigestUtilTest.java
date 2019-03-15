@@ -28,9 +28,9 @@ public class DigestUtilTest {
 	
 	@Test
 	public void md5_test() {
-		String str = "test";
-		String md5Str = DigestUtil.md5(str);
-		//32位,098f6bcd4621d373cade4e832627b4f6
+		String str = "ss123456";
+		String md5Str = DigestUtil.md5Hex(str);
+		//32位,BAF0F0AFD319BF489C5FE7D5A44B7A52
 		System.out.println(md5Str);
 	}
 	

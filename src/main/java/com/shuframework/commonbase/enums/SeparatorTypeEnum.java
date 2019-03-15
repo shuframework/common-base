@@ -11,8 +11,7 @@ public enum SeparatorTypeEnum {
 	COMMA(",", "逗号"),
 	POINT(".", "点"),
 	UNDERLINE("_", "下划线"),
-	BLANK(" ", "空格")
-	;
+	BLANK(" ", "空格");
 
 	private String code;
 	private String msg;
