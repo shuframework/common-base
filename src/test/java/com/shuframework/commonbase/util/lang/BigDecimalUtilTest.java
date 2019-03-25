@@ -53,6 +53,12 @@ public class BigDecimalUtilTest {
 
 
     @Test
+    public void floor_test1() {
+        BigDecimal num1 = BigDecimalUtil.ceil(new BigDecimal("0.4"));
+        System.out.println(num1);
+    }
+
+    @Test
     public void floor_test2() {
         BigDecimal num1 = new BigDecimal("0.4");
         down(num1);
