@@ -1,6 +1,6 @@
 package com.shuframework.commonbase.result;
 
-import com.shuframework.commonbase.constant.CommonConstant;
+import com.shuframework.commonbase.constant.SystemConstant;
 
 import java.util.List;
 import java.util.Map;
@@ -22,11 +22,11 @@ import java.util.Map;
 public class PageInfo {
 
     /** 默认起始页数 */
-    public static final int PAGE_INDEX_DEFAULT = CommonConstant.PAGE_INDEX_DEFAULT;
+    public static final int PAGE_INDEX_DEFAULT = SystemConstant.PAGE_INDEX_DEFAULT;
     /** 默认每页数量 */
-    public static final int PAGE_SIZE_DEFAULT = CommonConstant.PAGE_SIZE_DEFAULT;
+    public static final int PAGE_SIZE_DEFAULT = SystemConstant.PAGE_SIZE_DEFAULT;
     /** 默认排序为asc升序 */
-    public static final String ORDERBY_ASC = CommonConstant.ORDERBY_ASC;
+    public static final String ORDERBY_ASC = SystemConstant.ORDERBY_ASC;
 
     private int total; // 总记录
     private List<?> rows; //显示的记录  

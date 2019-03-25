@@ -6,7 +6,7 @@ package com.shuframework.commonbase.constant;
  * @author shuheng
  *
  */
-public class CommonConstant {
+public class SystemConstant {
 
 	/** 状态：可用 */
 	public static final String DATA_ENABLE_STR = "1";
