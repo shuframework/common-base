@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.singleton;
+package com.shuframework.designpattern.creation_singleton;
 
 import org.junit.Test;
 

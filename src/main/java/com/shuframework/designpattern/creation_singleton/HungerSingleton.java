@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.singleton;
+package com.shuframework.designpattern.creation_singleton;
 
 /**
  * 饿汉 单例

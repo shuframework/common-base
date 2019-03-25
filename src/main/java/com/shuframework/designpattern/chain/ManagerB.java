@@ -1,11 +1,12 @@
 package com.shuframework.designpattern.chain;
 
 /**
+ * B经理审核
  * @author shuheng
  */
-public class ManagerA extends Leader {
+public class ManagerB extends Leader {
 
-    public ManagerA(String name) {
+    public ManagerB(String name) {
         super(name);
     }
 

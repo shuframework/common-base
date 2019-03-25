@@ -1,4 +1,7 @@
-package com.shuframework.designpattern.mediator;
+package com.shuframework.designpattern.mediator.example1;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 联合国 安理会
@@ -7,41 +10,26 @@ package com.shuframework.designpattern.mediator;
  */
 public class UnitedNationsAA extends UnitedNations {
 
-    //这里的持有对象 可以改为Map<String, Country>对象
-    private USA usaCountry;
-    private Iraq iraqCountry;
+    private Map<String, AbstractCountry> map = new HashMap<>();
 
 
     /**
      * 发申明
      *
+     * @param name
      * @param message
-     * @param country
      */
     @Override
-    public void declare(String message, Country country) {
-        if (country == usaCountry) {
-            iraqCountry.getMessage(message);
+    public void declare(String name, String message) {
+        for (String key : map.keySet()) {
+            if (!key.equals(name)){
+                map.get(key).getMessage(message);
+            }
         }
-        if (country == iraqCountry) {
-            usaCountry.getMessage(message);
-        }
     }
 
-
-    public USA getUsaCountry() {
-        return usaCountry;
-    }
-
-    public void setUsaCountry(USA usaCountry) {
-        this.usaCountry = usaCountry;
-    }
-
-    public Iraq getIraqCountry() {
-        return iraqCountry;
-    }
-
-    public void setIraqCountry(Iraq iraqCountry) {
-        this.iraqCountry = iraqCountry;
+    @Override
+    public void register(String name, AbstractCountry country) {
+        map.put(name, country);
     }
 }

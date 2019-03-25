@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.mediator.example2;
+package com.shuframework.designpattern.mediator.example3;
 
 /**
  * 联合国机构
@@ -10,10 +10,10 @@ public interface UnitedNations {
     /**
      * 发申明
      *
-     * @param dname
+     * @param name
      */
-    void declare(String dname, String message);
+    void declare(String name, String message);
 
-    void register(String dname, Country country);
+    void register(String name, AbstractCountry country);
 
 }

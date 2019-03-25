@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.mediator.example1;
+package com.shuframework.designpattern.mediator.example3;
 
 /**
  * 国家 抽象类
@@ -7,10 +7,14 @@ package com.shuframework.designpattern.mediator.example1;
  */
 public abstract class AbstractCountry {
 
+    protected String name;
     protected UnitedNations mediator;
 
-    public AbstractCountry(UnitedNations mediator) {
+    public AbstractCountry(UnitedNations mediator, String name) {
         this.mediator = mediator;
+        this.name = name;
+        //name 也需要重新赋值，不然是null
+        mediator.register(name, this);
     }
 
     /**
@@ -19,7 +23,9 @@ public abstract class AbstractCountry {
      * @param message
      */
     public void declare(String message) {
-        mediator.declare(message, this);
+        mediator.declare(name, message);
     }
+
+    public abstract void getMessage(String message);
 
 }

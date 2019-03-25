@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.mediator.example2;
+package com.shuframework.designpattern.mediator.example3;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,27 +10,27 @@ import java.util.Map;
  */
 public class UnitedNationsAA implements UnitedNations {
 
-    private Map<String, Country> map = new HashMap<>();
+    private Map<String, AbstractCountry> map = new HashMap<>();
 
 
     /**
      * 发申明
      *
-     * @param dname
+     * @param name
      * @param message
      */
     @Override
-    public void declare(String dname, String message) {
+    public void declare(String name, String message) {
         for (String key : map.keySet()) {
-            if (!key.equals(dname)){
+            if (!key.equals(name)){
                 map.get(key).getMessage(message);
             }
         }
     }
 
     @Override
-    public void register(String dname, Country country) {
-        map.put(dname, country);
+    public void register(String name, AbstractCountry country) {
+        map.put(name, country);
     }
 
 }

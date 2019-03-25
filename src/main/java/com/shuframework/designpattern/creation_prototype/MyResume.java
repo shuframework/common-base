@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.prototype;
+package com.shuframework.designpattern.creation_prototype;
 
 import java.util.Date;
 

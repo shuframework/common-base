@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.mediator.example2;
+package com.shuframework.designpattern.mediator.example3;
 
 import org.junit.Test;
 

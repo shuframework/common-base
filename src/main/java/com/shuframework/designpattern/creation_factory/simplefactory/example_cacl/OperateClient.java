@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.factory.simplefactory.example_cacl;
+package com.shuframework.designpattern.creation_factory.simplefactory.example_cacl;
 
 import java.math.BigDecimal;
 

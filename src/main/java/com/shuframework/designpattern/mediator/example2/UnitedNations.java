@@ -1,18 +1,19 @@
-package com.shuframework.designpattern.mediator.example1;
+package com.shuframework.designpattern.mediator.example2;
 
 /**
  * 联合国机构
  *
  * @author shuheng
  */
-public abstract class UnitedNations {
+public interface UnitedNations {
 
     /**
      * 发申明
      *
-     * @param message
-     * @param country
+     * @param dname
      */
-    public abstract void declare(String message, Country country);
+    void declare(String dname, String message);
+
+    void register(String dname, Country country);
 
 }

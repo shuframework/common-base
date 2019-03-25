@@ -1,8 +1,9 @@
-package com.shuframework.designpattern.mediator;
+package com.shuframework.designpattern.mediator.example1;
 
 import org.junit.Test;
 
 /**
+ * 测试 中介者和具体对象 之间需要互相认识，简化为只需认识一次
  * @author shuheng
  */
 public class MediatorClient {
@@ -15,11 +16,8 @@ public class MediatorClient {
         USA usa = new USA(mediator);
         Iraq iraq = new Iraq(mediator);
 
-        //这里可以改为 register方法自动持有了
-        mediator.setUsaCountry(usa);
-        mediator.setIraqCountry(iraq);
-
         usa.declare("不准研发核武器");
+        System.out.println("-------------");
         iraq.declare("我们没有核武器");
     }
 

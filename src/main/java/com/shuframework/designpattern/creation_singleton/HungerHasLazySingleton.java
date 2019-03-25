@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.singleton;
+package com.shuframework.designpattern.creation_singleton;
 
 /**
  * 静态内部类实现 单例

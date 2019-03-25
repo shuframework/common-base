@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.mediator.example1;
+package com.shuframework.designpattern.mediator.example3;
 
 /**
  * 伊拉克
@@ -6,18 +6,15 @@ package com.shuframework.designpattern.mediator.example1;
  * @author shuheng
  */
 public class Iraq extends AbstractCountry {
+//    private String name = "iraq";
 
     public Iraq(UnitedNations mediator) {
-        super(mediator);
-    }
+        super(mediator, "iraq");
+//        super(mediator, name); //直接使用不了
 
-//    /**
-//     * 申明
-//     *
-//     * @param message
-//     */
-//    public void declare(String message) {
-//        mediator.declare(message, this);
+    }
+//    public Iraq(UnitedNations mediator, String name) {
+//        super(mediator, name);
 //    }
 
     public void getMessage(String message) {

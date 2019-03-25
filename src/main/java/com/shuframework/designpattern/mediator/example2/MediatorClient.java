@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.mediator.example1;
+package com.shuframework.designpattern.mediator.example2;
 
 import org.junit.Test;
 
@@ -15,11 +15,8 @@ public class MediatorClient {
         USA usa = new USA(mediator);
         Iraq iraq = new Iraq(mediator);
 
-        //这里可以改为 register方法自动持有了
-        mediator.setUsaCountry(usa);
-        mediator.setIraqCountry(iraq);
-
         usa.declare("不准研发核武器");
+        System.out.println("-------------");
         iraq.declare("我们没有核武器");
     }
 
