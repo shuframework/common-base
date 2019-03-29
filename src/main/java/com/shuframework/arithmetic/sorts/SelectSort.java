@@ -19,6 +19,7 @@ public class SelectSort {
         //一趟走完 left++, right-- 后，总趟数是 length/2 (如5/2=2)
         for (int left = 0, right = intArr.length - 1; left < right; left++, right--) {
             System.out.println("第" + (left + 1) + "趟");
+            int compareCount = 0;
             //一开始是最左边与最右边比较，然是第一位/最后一位 与第二位比较
             for (int j = left; j < right; j++) {
                 //放在内层循环是因为，可能每次有交换，需要保证其是最新值
@@ -35,7 +36,7 @@ public class SelectSort {
                     intArr[j] = intArr[right];
                     intArr[right] = temp;
                 }
-                System.out.println("交换次数：" + j + ", 结果：" + Arrays.toString(intArr));
+                System.out.println("交换次数：" + (++compareCount) + ", 结果：" + Arrays.toString(intArr));
             }
         }
     }
