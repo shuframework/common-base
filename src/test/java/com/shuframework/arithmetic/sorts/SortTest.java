@@ -52,9 +52,11 @@ public class SortTest {
 
     @Test
     public void selectSort_test2() {
+//        int[] intArr = {2, 5, 4, 3, 1};
 //        int[] intArr = {1, 2, 3, 4, 5, 6, 7};
 //        int[] intArr = {7, 6, 5, 4, 3, 2, 1};
-        int[] intArr = {2, 5, 4, 3, 1};
+        int[] intArr = {7, 6, 5, 4, 1, 2, 3};
+//        int[] intArr = {3, 2, 1, 6, 4, 5, 7, 8};
         SelectSort.sort(intArr);
     }
 

@@ -10,25 +10,20 @@ import java.util.Arrays;
  */
 public class SelectSort {
 
-    //2边同时进行排序
+    //2边同时进行排序，保证每次第一位是最小值，最后一位是最大值
     public static void sort(int[] intArr) {
+        //避免循环内不停的创建于回收变量
+        int temp = 0;
+        int minValue = 0;
+        int maxValue = 0;
         //一趟走完 left++, right-- 后，总趟数是 length/2 (如5/2=2)
         for (int left = 0, right = intArr.length - 1; left < right; left++, right--) {
             System.out.println("第" + (left + 1) + "趟");
-            int minValue = intArr[left];
-            int maxValue = intArr[right];
-            //兼容最右和最左的值刚刚是反的情况
-            if (minValue > maxValue) {
-                intArr[left] = maxValue;
-                intArr[right] = minValue;
-                //修改最小值
-                int temp = minValue;
-                minValue = maxValue;
-                maxValue = temp;
-            }
-            //避免循环内不停的创建于回收变量
-            int temp = 0;
-            for (int j = left + 1; j <= right; j++) {
+            //一开始是最左边与最右边比较，然是第一位/最后一位 与第二位比较
+            for (int j = left; j < right; j++) {
+                //放在内层循环是因为，可能每次有交换，需要保证其是最新值
+                minValue = intArr[left];
+                maxValue = intArr[right];
 
                 if (minValue > intArr[j]) {
                     temp = intArr[j];
