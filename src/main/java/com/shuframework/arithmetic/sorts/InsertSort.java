@@ -10,22 +10,19 @@ import java.util.Arrays;
 public class InsertSort {
 
     public static void sort(int[] intArr) {
-        int max = intArr.length - 1;
-        for (int i = 0; i < max; i++) {
-            System.out.println("第" + (i + 1) + "趟");
-            int insertVal = intArr[i];
-            int insertIndex = i;
-//            int compareCount = 0;
-            for (int j = insertIndex; j > 0 ; j--) {
-                //新元素小于已排序元素
-                if (insertVal < intArr[j]){
-                    intArr[j+1] = intArr[j];
-                    insertIndex--;
+        //从第2位到最后一位
+        for (int i = 1; i < intArr.length; i++) {
+            System.out.println("第" + i + "趟");
+            int compareCount = 0;
+            for (int j = i; j > 0; j--) {
+                //前面的数大于后面的数则交换
+                if (intArr[j - 1] > intArr[j]) {
+                    int temp = intArr[j];
+                    intArr[j] = intArr[j - 1];
+                    intArr[j - 1] = temp;
                 }
-//                System.out.println("交换次数：" + (++compareCount) + ", 结果：" + Arrays.toString(intArr));
+                System.out.println("交换次数：" + (++compareCount) + ", 结果：" + Arrays.toString(intArr));
             }
-            intArr[insertIndex] = insertVal;
-            System.out.println("结果：" + Arrays.toString(intArr));
         }
     }
 }

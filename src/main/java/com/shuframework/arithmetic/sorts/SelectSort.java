@@ -20,19 +20,17 @@ public class SelectSort {
         for (int left = 0, right = intArr.length - 1; left < right; left++, right--) {
             System.out.println("第" + (left + 1) + "趟");
             int compareCount = 0;
-            //一开始是最左边与最右边比较，然是第一位/最后一位 与第二位比较
+            //第一个数与最后一位依次比较，每趟找出左边为最小，右边为最大值，下次下标依次移到
             for (int j = left; j < right; j++) {
-                //放在内层循环是因为，可能每次有交换，需要保证其是最新值
-                minValue = intArr[left];
-                maxValue = intArr[right];
-
-                if (minValue > intArr[j]) {
-                    temp = intArr[j];
+                //放在内层循环是因为，可能每次有交换，需要保证其是最新值,因为变量用不上所以不用定义
+//                minValue = intArr[left];
+//                maxValue = intArr[right];
+                temp = intArr[j];
+                if (intArr[left] > intArr[j]) {
                     intArr[j] = intArr[left];
                     intArr[left] = temp;
                 }
-                if (maxValue < intArr[j]) {
-                    temp = intArr[j];
+                if (intArr[right] < intArr[j]) {
                     intArr[j] = intArr[right];
                     intArr[right] = temp;
                 }
