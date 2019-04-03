@@ -6,12 +6,13 @@ package com.shuframework.designpattern.creation_singleton;
  */
 public class HungerSingleton {
     //私有构造
-    private HungerSingleton(){}
+    private HungerSingleton() {
+    }
 
     //提供唯一一个实例
     private static HungerSingleton instance = new HungerSingleton();
 
-    public static HungerSingleton getInstance(){
+    public static HungerSingleton getInstance() {
         return instance;
     }
 
