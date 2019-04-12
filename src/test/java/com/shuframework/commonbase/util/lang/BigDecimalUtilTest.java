@@ -12,6 +12,29 @@ import static org.junit.Assert.*;
 public class BigDecimalUtilTest {
 
     @Test
+    public void compare_test2() {
+        BigDecimal num1 = new BigDecimal("0");
+        if(num1.compareTo(BigDecimal.ZERO) <= 0){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+    }
+
+    @Test
+    public void compare_test() {
+        BigDecimal num1 = new BigDecimal("0.4");
+        BigDecimal num2 = new BigDecimal("0.5");
+        BigDecimal num3 = new BigDecimal("0.6");
+        boolean flag1 = BigDecimalUtil.compare(num1, num2);
+        boolean flag2 = BigDecimalUtil.compare(num2, num1);
+        boolean flag3 = BigDecimalUtil.compare(num2, num3);
+        System.out.println("num1 > num2,结果：" + flag1);
+        System.out.println("num2 > num1,结果：" + flag2);
+        System.out.println("num2 > num3,结果：" + flag3);
+    }
+
+    @Test
     public void up_test() {
         BigDecimal num1 = new BigDecimal("0.4");
         up(num1);
