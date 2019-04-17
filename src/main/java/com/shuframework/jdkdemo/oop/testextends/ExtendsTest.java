@@ -1,4 +1,8 @@
-package com.shuframework.jdkdemo.oop;
+package com.shuframework.jdkdemo.oop.testextends;
+
+import org.junit.Test;
+
+import java.util.Arrays;
 
 /**
  * 静态绑定：调用的都是当前的申明类信息
@@ -31,4 +35,14 @@ public class ExtendsTest {
         c.protectedTest();
 
     }
+
+    @Test
+    public void test1(){
+        MyChild c = new MyChild();
+        int[] nums = {1,2,3};
+        c.addAll(nums);
+        System.out.println(c.getSum());
+        System.out.println(Arrays.toString(c.getList()));
+    }
+
 }
