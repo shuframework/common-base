@@ -347,6 +347,16 @@ public class BigDecimalUtil {
 		return num.divide(BigDecimal.ONE, 0, BigDecimal.ROUND_CEILING);
 	}
 
+	/**
+	 * 如果num1 大于num2 返回true
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
+	public static boolean compare(BigDecimal num1, BigDecimal num2) {
+		return num1.compareTo(num2) > 0 ? true : false;
+	}
+
 //	public static void main(String[] args) {
 //		String[] strArr = new String[1000000];
 //		for (int i = 0; i < 1000000; i++) {

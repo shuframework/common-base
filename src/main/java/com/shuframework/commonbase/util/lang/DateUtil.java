@@ -138,6 +138,8 @@ public class DateUtil {
 
     /**
      * 返回true表示 time1在time2前（time1与time2一样返回是false）
+     * time1 < time2 返回true, 表示time1在time2后,
+     * 其实可以 用 time1.before(time2) 效果一样
      *
      * @param time1
      * @param time2
@@ -145,7 +147,7 @@ public class DateUtil {
      */
     public static boolean isBefore(Date time1, Date time2) {
         long times = timeDiff(time1, time2);
-        if (times > 0) {
+        if (times < 0) {
             return true;
         } else {
             return false;
@@ -154,6 +156,8 @@ public class DateUtil {
 
     /**
      * 返回true表示 time1在time2后（time1与time2一样返回是false）
+     * time1 > time2 返回true, 表示time1在time2后,
+     * 其实可以 用 time1.after(time2) 效果一样
      *
      * @param time1
      * @param time2
@@ -161,7 +165,7 @@ public class DateUtil {
      */
     public static boolean isAfter(Date time1, Date time2) {
         long times = timeDiff(time1, time2);
-        if (times < 0) {
+        if (times > 0) {
             return true;
         } else {
             return false;
