@@ -2,11 +2,12 @@ package com.shuframework.commonbase.constant;
 
 /**
  * 文字编码常量, MediaType可以获取到content-type的值
- * @author shu
+ * @author shuheng
  *
  */
 public class CharsetConstant {
 
+	public final static String CHARSET_ASCII = "US-ASCII";
 	public final static String CHARSET_ISO = "ISO-8859-1";
 	
 	public final static String CHARSET_UTF8 = "UTF-8";
