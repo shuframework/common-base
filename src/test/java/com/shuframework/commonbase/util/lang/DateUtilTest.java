@@ -41,6 +41,11 @@ public class DateUtilTest {
 		
 		Date date2 = new Date();
 		System.out.println(date2.getTime());
+
+		System.out.println(date1.before(date2));
+		System.out.println(DateUtil.isBefore(date1, date2));
+		System.out.println(date1.after(date2));
+		System.out.println(DateUtil.isAfter(date1, date2));
 	}
 	
 	@Test

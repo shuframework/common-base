@@ -1,6 +1,7 @@
 package com.shuframework.commonbase.util.collection;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
  * 数组工具类, 可以直接使用java.util.Arrays
@@ -9,6 +10,17 @@ import java.lang.reflect.Array;
  * @author shuheng
  */
 public class ArrayUtil {
+
+    public static void main(String[] args) {
+//        int[] intArr = {3,2,4,1,5};
+        int[] intArr = new int[5];
+        // 重新赋值，也可以理解为给空数组赋默认值
+//        Arrays.fill(intArr, 6); //[6, 6, 6, 6, 6]
+        // 范围是 [fromIndex, toIndex)
+        Arrays.fill(intArr, 2,3,6); //[0, 0, 6, 0, 0]
+        System.out.println(Arrays.toString(intArr));
+    }
+
 
     /**
      * 数组复制,如果长度比之前大，多的长度内容赋值为空
