@@ -3,7 +3,10 @@ package com.shuframework.commonbase.util.collection;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MapUtilTest {
@@ -28,10 +31,24 @@ public class MapUtilTest {
 	}
 	
 	@Test
+	public void test11() {
+		List<String> mapList = new ArrayList<>();
+		mapList.add("1");
+		mapList.add("2");
+		Map<String, Object> map = new HashMap<>();
+		map.put("mapList", mapList);
+		List<String> list = (List<String>) map.get("mapList");
+		String[] strArr = new String[list.size()];
+		list.toArray(strArr);
+
+		System.out.println(Arrays.toString(strArr));
+	}
+
+	@Test
 	public void test() {
 		String strMinKey = MapUtil.getMinKey(strMap);
 		System.out.println(strMinKey);
-		
+
 		Integer intMinKey = MapUtil.getMinKey(intMap);
 		System.out.println(intMinKey);
 	}
