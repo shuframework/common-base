@@ -1,12 +1,12 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
+
+import org.junit.Test;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
-
-import org.junit.Test;
+import java.util.Set;
 
 /**
  * Map集合和Collection集合的区别?

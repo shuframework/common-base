@@ -1,4 +1,4 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
 
 import com.shuframework.jdkutil.SystemUtil;
 

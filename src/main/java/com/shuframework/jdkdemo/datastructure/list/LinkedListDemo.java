@@ -1,11 +1,11 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
 
 /**
  * LinkedListDemo 与ArrayListDemo里面的非特有方法使用是一样

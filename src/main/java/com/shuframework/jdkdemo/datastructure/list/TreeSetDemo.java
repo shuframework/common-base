@@ -1,8 +1,8 @@
-package com.shuframework.jdkdemo.collection;
-
-import java.util.TreeSet;
+package com.shuframework.jdkdemo.datastructure.list;
 
 import org.junit.Test;
+
+import java.util.TreeSet;
 
 /**
  * TreeSet：能够对元素按照某种规则进行排序。

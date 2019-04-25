@@ -1,4 +1,4 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
 
 import java.util.ArrayList;
 import java.util.Collections;

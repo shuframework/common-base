@@ -1,4 +1,8 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
+
+import com.shuframework.jdkutil.random.RandomUtil;
+import com.shuframework.testmodel.BookInfo2;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,11 +12,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
-
-import org.junit.Test;
-
-import com.shuframework.jdkutil.random.RandomUtil;
-import com.shuframework.testmodel.BookInfo2;
 
 /**
  * 集合的练习

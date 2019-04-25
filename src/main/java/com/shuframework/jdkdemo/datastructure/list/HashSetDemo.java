@@ -1,11 +1,11 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
-import org.junit.Before;
-import org.junit.Test;
 
 /**
  * Set集合的特点：无序(存储顺序和取出顺序不一致), 唯一

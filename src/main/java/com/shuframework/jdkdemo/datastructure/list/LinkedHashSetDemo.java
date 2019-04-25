@@ -1,10 +1,10 @@
-package com.shuframework.jdkdemo.collection;
+package com.shuframework.jdkdemo.datastructure.list;
+
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import org.junit.Test;
 
 /**
  * LinkedHashSet:底层数据结构由哈希表和链表组成。

@@ -1,11 +1,11 @@
-package com.shuframework.jdkdemo.collection;
-
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.Map.Entry;
+package com.shuframework.jdkdemo.datastructure.list;
 
 import org.junit.Test;
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * TreeMap:是基于红黑树的Map接口的实现。
