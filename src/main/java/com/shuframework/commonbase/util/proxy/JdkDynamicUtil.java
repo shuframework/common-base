@@ -1,4 +1,4 @@
-package com.shuframework.commontools.proxy;
+package com.shuframework.commonbase.util.proxy;
 
 import java.lang.reflect.Proxy;
 
