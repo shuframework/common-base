@@ -72,4 +72,24 @@ public interface MyList<E> {
      */
     void clear();
 
+    /**
+     * 是否已满, 满了返回true
+     * @return
+     */
+    boolean isFull();
+//    // 涉及到具体的对象 所以不适合默认实现
+//    default boolean isFull() {
+//        return size == elementData.length;
+//    }
+
+    /**
+     * 检查index 是否合法
+     * @param index
+     * @param length 固定数组的length
+     */
+    default void rangeCheck(int index, int length) {
+        if (index >= length || index < 0) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Length: " + length);
+        }
+    }
 }

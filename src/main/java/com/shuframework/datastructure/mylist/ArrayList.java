@@ -72,4 +72,9 @@ public class ArrayList<E> implements MyList {
     public void clear() {
 
     }
+
+    @Override
+    public boolean isFull() {
+        return false;
+    }
 }

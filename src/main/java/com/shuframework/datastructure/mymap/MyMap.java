@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.Set;
 
 /**
+ * 哈希表的常用功能
+ *
  * @author shuheng
  */
 public interface MyMap<K, V> {

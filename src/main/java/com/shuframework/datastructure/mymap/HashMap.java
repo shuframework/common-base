@@ -4,7 +4,11 @@ import java.util.Collection;
 import java.util.Set;
 
 /**
+ * 自己实现的HashMap, 底层只是数组里面放拉链表, 没加红黑树,
+ * jdk8 多了红黑树，同一index的链表元素有8个以上时会变成红黑树
+ *
  * @author shuheng
+ *
  */
 public class HashMap<K, V> implements MyMap<K, V> {
 

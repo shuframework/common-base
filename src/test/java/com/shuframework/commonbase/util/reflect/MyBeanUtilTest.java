@@ -1,9 +1,9 @@
 package com.shuframework.commonbase.util.reflect;
 
 import com.shuframework.commonbase.util.lang.DateUtil;
-import com.shuframework.testmodel.BookInfo;
-import com.shuframework.testmodel.BookInfo2;
-import com.shuframework.testmodel.BookInfo3;
+import com.shuframework.jdkdemo.testmodel.BookInfo;
+import com.shuframework.jdkdemo.testmodel.BookInfo2;
+import com.shuframework.jdkdemo.testmodel.BookInfo3;
 import org.junit.Test;
 
 import java.util.Date;

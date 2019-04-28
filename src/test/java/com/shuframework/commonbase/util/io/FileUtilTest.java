@@ -1,7 +1,7 @@
 package com.shuframework.commonbase.util.io;
 
 import com.shuframework.commonbase.constant.CharsetConstant;
-import com.shuframework.testmodel.BookInfo3;
+import com.shuframework.jdkdemo.testmodel.BookInfo3;
 import org.junit.Test;
 
 import java.io.File;

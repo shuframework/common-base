@@ -1,6 +1,6 @@
 package com.shuframework.commonbase.streamtest;
 
-import com.shuframework.testmodel.BookInfo;
+import com.shuframework.jdkdemo.testmodel.BookInfo;
 import org.junit.Test;
 
 import java.util.ArrayList;

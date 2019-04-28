@@ -114,11 +114,11 @@ public class ValidateUtil {
 	private static final String V_RAR = "(.*)\\.(rar|zip|7zip|tgz)";
 
 	/** 日期: yyyy-MM-dd */
-	private static final String V_DATE = "((19|20)\\d{2})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])";
+	private static final String V_DATE = "((19|20)\\d{2})-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])";
 	/** 时间: HH:mm:ss */
-    private static final String V_TIME = "([0-1][0-9]|2[0-4]):([0-5][0-9]|60):([0-5][0-9]|60)";
-    //2种都可以
-//    private static final String V_TIME = "(0[0-9]|1[0-9]|2[0-4])\\:([0-5][0-9]|60)\\:([0-5][0-9]|60)";
+    private static final String V_TIME = "([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])";
+//    // 一般不会出现60 或24h，因为到点就转了 最多是23:59:59
+//    private static final String V_TIME = "([0-1][0-9]|2[0-4]):([0-5][0-9]|60):([0-5][0-9]|60)";
 
 	/** QQ号码 */
 	private static final String V_QQ_NUMBER = "[1-9]*[1-9][0-9]*";
@@ -139,7 +139,9 @@ public class ValidateUtil {
 	private static final String V_LETTER_I = "[a-z]+";
 
 	/** 身份证 */
-	private static final String V_IDCARD = "(\\d{15}|\\d{18}|\\d{17}(\\d|X|x))";
+//	private static final String V_IDCARD = "(\\d{15}|\\d{18}|\\d{17}(\\d|X|x))";
+	// 18位
+	private static final String V_IDCARD = "[1-9][0-9]{14}([0-9]{2}[0-9xX])?";
 
 	/** 验证密码(数字和英文同时存在) */
 	private static final String V_PASSWORD_REG = "[A-Za-z]+[0-9]";
