@@ -76,6 +76,13 @@ public class BookInfo {
 		this.createTime = createTime;
 	}
 
+	public BookInfo(Integer id, String name, Double price, Date createTime) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.createTime = createTime;
+	}
+
 	@Override
 	public String toString() {
 		return "BookInfo [id=" + id + ", name=" + name + ", price=" + price + ", createTime=" + createTime + "]";
