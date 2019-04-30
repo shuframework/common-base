@@ -1,27 +1,24 @@
-package cn.javass.dp.builder.example4;
+package com.shuframework.designpattern.creation_builder.example2;
 
 public class Client {
-	public static void main(String[] args) {
-		//´´½¨¹¹½¨Æ÷
-		ConcreteBuilder builder = new ConcreteBuilder("001",12345L,67890L);
-		//ÉèÖÃĞèÒªµÄÊı¾İ£¬È»ºó¹¹½¨±£ÏÕºÏÍ¬¶ÔÏó
-		InsuranceContract contract = 
-				builder.setPersonName("ÕÅÈı")
-				.setOtherData("test")
-				.build();
-		
-		//²Ù×÷±£ÏÕºÏÍ¬¶ÔÏóµÄ·½·¨
-		contract.someOperation();
-		
-		ConcreteBuilder builder2 = new ConcreteBuilder("001",12345L,67890L);
-		InsuranceContract contract2 = 
-				builder2
-					.setPersonName("ÀîËÄ")
-					.setCompanyName("cc")
-					.setOtherData("company")
-					.build();
-		contract2.someOperation();
-		
-		
-	}
+    public static void main(String[] args) {
+        //åˆ›å»ºæ„å»ºå™¨
+        ConcreteBuilder builder = new ConcreteBuilder("001",12345L,67890L);
+        //è®¾ç½®éœ€è¦çš„æ•°æ®ï¼Œç„¶åæ„å»ºä¿é™©åˆåŒå¯¹è±¡
+        InsuranceContract contract = builder.setPersonName("å¼ ä¸‰")
+                        .setOtherData("test")
+                        .build();
+
+        //æ“ä½œä¿é™©åˆåŒå¯¹è±¡çš„æ–¹æ³•
+        contract.someOperation();
+
+        ConcreteBuilder builder2 = new ConcreteBuilder("002",12345L,67890L);
+        InsuranceContract contract2 = builder2.setPersonName("æå››")
+                        .setCompanyName("cc")
+                        .setOtherData("company")
+                        .build();
+        contract2.someOperation();
+
+    }
 }
+

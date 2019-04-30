@@ -1,81 +1,94 @@
-package cn.javass.dp.builder.example4;
+package com.shuframework.designpattern.creation_builder.example2;
+
 /**
- * ¹¹Ôì±£ÏÕºÏÍ¬¶ÔÏóµÄ¹¹½¨Æ÷
+ * æ„é€ ä¿é™©åˆåŒå¯¹è±¡çš„æ„å»ºå™¨
  */
 public class ConcreteBuilder {
-	private String contractId;
-	private String personName;
-	private String companyName;
-	private long beginDate;
-	private long endDate;
-	private String otherData;
-	/**
-	 * ¹¹Ôì·½·¨£¬´«Èë±ØĞëÒªÓĞµÄ²ÎÊı
-	 * @param contractId ±£ÏÕºÏÍ¬±àºÅ
-	 * @param beginDate ±£ÏÕ¿ªÊ¼ÉúĞ§µÄÈÕÆÚ
-	 * @param endDate ±£ÏÕÊ§Ğ§µÄÈÕÆÚ
-	 */
-	public ConcreteBuilder(String contractId,long beginDate,long endDate){
-		this.contractId = contractId;
-		this.beginDate = beginDate;
-		this.endDate = endDate;
-	}
-	/**
-	 * Ñ¡ÌîÊı¾İ£¬±»±£ÏÕÈËÔ±µÄÃû³Æ
-	 * @param personName  ±»±£ÏÕÈËÔ±µÄÃû³Æ
-	 * @return ¹¹½¨Æ÷¶ÔÏó
-	 */
-	public ConcreteBuilder setPersonName(String personName){
-		this.personName = personName;
-		return this;
-	}
-	/**
-	 *  Ñ¡ÌîÊı¾İ£¬±»±£ÏÕ¹«Ë¾µÄÃû³Æ
-	 * @param companyName ±»±£ÏÕ¹«Ë¾µÄÃû³Æ
-	 * @return ¹¹½¨Æ÷¶ÔÏó
-	 */
-	public ConcreteBuilder setCompanyName(String companyName){
-		this.companyName = companyName;
-		return this;
-	}
-	/**
-	 * Ñ¡ÌîÊı¾İ£¬ÆäËüÊı¾İ
-	 * @param otherData ÆäËüÊı¾İ
-	 * @return ¹¹½¨Æ÷¶ÔÏó
-	 */
-	public ConcreteBuilder setOtherData(String otherData){
-		this.otherData = otherData;
-		return this;
-	}
-	/**
-	 * ¹¹½¨ÕæÕıµÄ¶ÔÏó²¢·µ»Ø
-	 * @return ¹¹½¨µÄ±£ÏÕºÏÍ¬µÄ¶ÔÏó
-	 */
-	public InsuranceContract build(){
-		return new InsuranceContract(this);
-	}
-	
-	public String getContractId() {
-		return contractId;
-	}
+    private String contractId;
+    private String personName;
+    private String companyName;
+    private long beginDate;
+    private long endDate;
+    private String otherData;
 
-	public String getPersonName() {
-		return personName;
-	}
+    /**
+     * æ„é€ æ–¹æ³•ï¼Œä¼ å…¥å¿…é¡»è¦æœ‰çš„å‚æ•°
+     *
+     * @param contractId ä¿é™©åˆåŒç¼–å·
+     * @param beginDate  ä¿é™©å¼€å§‹ç”Ÿæ•ˆçš„æ—¥æœŸ
+     * @param endDate    ä¿é™©å¤±æ•ˆçš„æ—¥æœŸ
+     */
+    public ConcreteBuilder(String contractId, long beginDate, long endDate) {
+        this.contractId = contractId;
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+    }
 
-	public String getCompanyName() {
-		return companyName;
-	}
+    /**
+     * é€‰å¡«æ•°æ®ï¼Œè¢«ä¿é™©äººå‘˜çš„åç§°
+     *
+     * @param personName è¢«ä¿é™©äººå‘˜çš„åç§°
+     * @return æ„å»ºå™¨å¯¹è±¡
+     */
+    public ConcreteBuilder setPersonName(String personName) {
+        this.personName = personName;
+        return this;
+    }
 
-	public long getBeginDate() {
-		return beginDate;
-	}
+    /**
+     * é€‰å¡«æ•°æ®ï¼Œè¢«ä¿é™©å…¬å¸çš„åç§°
+     *
+     * @param companyName è¢«ä¿é™©å…¬å¸çš„åç§°
+     * @return æ„å»ºå™¨å¯¹è±¡
+     */
+    public ConcreteBuilder setCompanyName(String companyName) {
+        this.companyName = companyName;
+        return this;
+    }
 
-	public long getEndDate() {
-		return endDate;
-	}
+    /**
+     * é€‰å¡«æ•°æ®ï¼Œå…¶å®ƒæ•°æ®
+     *
+     * @param otherData å…¶å®ƒæ•°æ®
+     * @return æ„å»ºå™¨å¯¹è±¡
+     */
+    public ConcreteBuilder setOtherData(String otherData) {
+        this.otherData = otherData;
+        return this;
+    }
 
-	public String getOtherData() {
-		return otherData;
-	}
+    /**
+     * æ„å»ºçœŸæ­£çš„å¯¹è±¡å¹¶è¿”å›
+     *
+     * @return æ„å»ºçš„ä¿é™©åˆåŒçš„å¯¹è±¡
+     */
+    public InsuranceContract build() {
+        //å¦‚æœæ„å»ºè¿‡ç¨‹æœ‰é™åˆ¶ å¯ä»¥åœ¨è¿™é‡Œè¿›è¡Œé™åˆ¶
+        // dosome check
+        return new InsuranceContract(this);
+    }
+
+    public String getContractId() {
+        return contractId;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public long getBeginDate() {
+        return beginDate;
+    }
+
+    public long getEndDate() {
+        return endDate;
+    }
+
+    public String getOtherData() {
+        return otherData;
+    }
 }

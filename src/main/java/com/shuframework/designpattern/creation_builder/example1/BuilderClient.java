@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.creation_builder;
+package com.shuframework.designpattern.creation_builder.example1;
 
 import org.junit.Test;
 
