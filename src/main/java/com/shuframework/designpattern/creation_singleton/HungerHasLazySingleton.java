@@ -9,7 +9,7 @@ public class HungerHasLazySingleton {
     private HungerHasLazySingleton() {
     }
 
-    //通过静态内部类提供唯一一个实例
+    //通过静态内部类提供唯一一个实例,只有在第一次被使用时才会被装载
     private static class InnerSingletonClass {
         private static final HungerHasLazySingleton instance = new HungerHasLazySingleton();
     }
