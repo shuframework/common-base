@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.creation_factory.abstractfactory.example1;
+package com.shuframework.designpattern.creation_factory.abstractfactory;
 
 /**
  * AMD的CPU实现

@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.creation_factory.abstractfactory.example1;
+package com.shuframework.designpattern.creation_factory.abstractfactory;
 
 /**
  * 主板的接口

@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.creation_factory.abstractfactory.example1;
+package com.shuframework.designpattern.creation_factory.abstractfactory;
 
 /**
  * Intel的CPU实现

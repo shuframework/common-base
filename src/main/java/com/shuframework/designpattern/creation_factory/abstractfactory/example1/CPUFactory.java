@@ -1,5 +1,9 @@
 package com.shuframework.designpattern.creation_factory.abstractfactory.example1;
 
+import com.shuframework.designpattern.creation_factory.abstractfactory.AMDCPU;
+import com.shuframework.designpattern.creation_factory.abstractfactory.CPUApi;
+import com.shuframework.designpattern.creation_factory.abstractfactory.IntelCPU;
+
 /**
  * 创建CPU的简单工厂
  */

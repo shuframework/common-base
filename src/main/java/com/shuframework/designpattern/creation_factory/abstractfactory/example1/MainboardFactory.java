@@ -1,5 +1,9 @@
 package com.shuframework.designpattern.creation_factory.abstractfactory.example1;
 
+import com.shuframework.designpattern.creation_factory.abstractfactory.GAMainboard;
+import com.shuframework.designpattern.creation_factory.abstractfactory.MSIMainboard;
+import com.shuframework.designpattern.creation_factory.abstractfactory.MainboardApi;
+
 /**
  * 创建主板的简单工厂
  */
