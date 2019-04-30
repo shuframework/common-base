@@ -1,4 +1,4 @@
-package com.shuframework.designpattern.creation_factory.simplefactory.example_cacl;
+package com.shuframework.designpattern.creation_factory.cacl;
 
 import com.shuframework.commonbase.util.lang.BigDecimalUtil;
 

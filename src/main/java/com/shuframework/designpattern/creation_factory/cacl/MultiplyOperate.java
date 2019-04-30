@@ -1,16 +1,16 @@
-package com.shuframework.designpattern.creation_factory.simplefactory.example_cacl;
+package com.shuframework.designpattern.creation_factory.cacl;
 
 import com.shuframework.commonbase.util.lang.BigDecimalUtil;
 
 import java.math.BigDecimal;
 
 /**
- * 加法
+ * 乘法
  * @author shuheng
  */
-public class DivideOperate implements Operate {
+public class MultiplyOperate implements OperateApi {
     @Override
     public BigDecimal getResult(String num1, String num2) {
-        return BigDecimalUtil.divide(num1, num2, 2);
+        return BigDecimalUtil.multiply(num1, num2);
     }
 }

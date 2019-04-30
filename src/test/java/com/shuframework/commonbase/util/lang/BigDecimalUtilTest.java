@@ -12,6 +12,13 @@ import static org.junit.Assert.*;
 public class BigDecimalUtilTest {
 
     @Test
+    public void pow_test2() {
+        BigDecimal num1 = new BigDecimal("2");
+//        BigDecimal num2 = new BigDecimal("3");
+        BigDecimal result = num1.pow(2);
+        System.out.println(result);
+    }
+    @Test
     public void compare_test2() {
         BigDecimal num1 = new BigDecimal("0");
         if(num1.compareTo(BigDecimal.ZERO) <= 0){
