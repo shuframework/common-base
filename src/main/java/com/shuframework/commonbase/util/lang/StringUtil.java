@@ -298,8 +298,37 @@ public class StringUtil {
 	}
 
 	/**
+	 * 下划线转驼峰
+	 * <pre>
+	 * 	"abc_ABc" 结果是abcAbc
+	 * 	"abc" 结果是abc
+	 * </pre>
+	 *
+	 * @param str
+	 * @return
+	 */
+	public static String capitalizeHump(String str) {
+		if (str == null || str.length() == 0) {
+			return str;
+		}
+		String[] strArr = str.toLowerCase().split(SeparatorTypeEnum.UNDERLINE.getCode());
+		int max = strArr.length;
+		if (max == 0) {
+			return str;
+		}
+		StringBuilder sb = new StringBuilder();
+		sb.append(strArr[0]);
+		for (int i = 1; i < max; i++) {
+			String splitStr = strArr[i];
+			sb.append(Character.toUpperCase(splitStr.charAt(0)));
+			sb.append(splitStr.substring(1));
+		}
+		return sb.toString();
+	}
+
+	/**
 	 * 首字母大写其它字母小写,去掉了分隔符(分隔符隔开的 都会首字母都会大写)
-	 * <p> capitalizeFully("abc_ABc", null)	结果是AbcAbc </p>
+	 * <p> capitalizeFully("abc_ABc", null)	结果是Abc_abc </p>
 	 * <p> capitalizeFully("abc_ABc", '_')	结果是AbcAbc </p>
 	 * <p> capitalizeFully("abc_ABC,bcd", new char[]{'_',','})	结果是AbcAbcBcd </p>
 	 *
@@ -344,9 +373,9 @@ public class StringUtil {
 	}
 
 	/**
-	 * 首字母大写,其它字母小写
+	 * 首字母大写,其它字母小写 指定了分隔符才会转换
 	 * <p> capitalizeFully("abc")	结果是Abc </p>
-	 * <p> capitalizeFully("abc_Abc")	结果是Abc_ABc </p>
+	 * <p> capitalizeFully("abc_abc")	结果是Abc_abc </p>
 	 * @param str
 	 * @return
 	 */
