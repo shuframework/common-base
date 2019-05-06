@@ -122,6 +122,14 @@ public class StringUtilTest {
 
 
 	@Test
+	public void capitalizeHump_test() {
+		String str1 = "abc_ABc";
+		System.out.println(StringUtil.capitalizeHump(str1));//abcAbc
+
+		String str2 = "abc";
+		System.out.println(StringUtil.capitalizeHump(str2));//abc
+	}
+	@Test
 	public void capitalize_test() {
 		String str = "abc_abC";
 		System.out.println(StringUtil.capitalize(str));//Abc_abC
