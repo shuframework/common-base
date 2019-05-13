@@ -6,7 +6,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by hcf on 2017/12/4.
+ * 阴历
+ * Created by shu
  */
 public class LunarDateUtil {
     private int year;

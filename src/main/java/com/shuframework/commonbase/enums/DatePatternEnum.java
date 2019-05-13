@@ -1,7 +1,7 @@
 package com.shuframework.commonbase.enums;
 
 /**
- * 进制的枚举
+ * 时间格式的枚举
  * 
  * @author shuheng
  *
