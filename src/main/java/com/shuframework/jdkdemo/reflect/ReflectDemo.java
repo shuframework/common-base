@@ -22,12 +22,17 @@ public class ReflectDemo {
 	public void getField() throws ReflectiveOperationException, SecurityException {
 		//java.lang.NoSuchFieldException: name , 访问不了private的属性
 //		Field field = BookInfo.class.getField("name");
-		
-		Field field2 = BookInfo.class.getDeclaredField("name");
+		Class clazz = BookInfo.class;
+		Object obj = clazz.newInstance();
+		Field field2 = clazz.getDeclaredField("name");
+		field2.setAccessible(true);
 		System.out.println(field2);
-		//java.lang.NoSuchFieldException: title 没有该属性
-		Field field3 = BookInfo.class.getDeclaredField("title");
-		System.out.println(field3);
+		field2.set(obj, "aa");
+		System.out.println(obj);
+
+//		//java.lang.NoSuchFieldException: title 没有该属性
+//		Field field3 = BookInfo.class.getDeclaredField("title");
+//		System.out.println(field3);
 	}
 	
 	@Test

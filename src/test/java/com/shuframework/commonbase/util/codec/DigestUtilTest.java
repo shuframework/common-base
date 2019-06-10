@@ -20,7 +20,7 @@ public class DigestUtilTest {
 	
 	@Test
 	public void decodeBase64_test() {
-		String str = "dGVzdA==";
+		String str = "1yTs7oA53sZ4lJakx9Ecjg==";
 		String base64Str = Base64Util.decodeBase64(str);
 		//test
 		System.out.println(base64Str);
@@ -28,9 +28,9 @@ public class DigestUtilTest {
 	
 	@Test
 	public void md5_test() {
-		String str = "ss123456";
+		String str = "111111";
 		String md5Str = DigestUtil.md5Hex(str);
-		//32位,BAF0F0AFD319BF489C5FE7D5A44B7A52
+		//32位,96e79218965eb72c92a549dd5a330112
 		System.out.println(md5Str);
 	}
 	@Test

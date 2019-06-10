@@ -41,17 +41,11 @@ public class StreamDemo {
         System.out.println("==========");
     }
 
-//    com.shuframework.jdkdemo.stream.LambdaDemo.filter_lambda_test
-//    @Test
-//    public void filter_stream_test() {
-//        List<BookInfo> returnList1 = bookInfoList.stream().filter(book -> book.getPrice() < 100)
-//                .collect(Collectors.toList());
-//        System.out.println(returnList1);
-//        System.out.println("==========");
-//
-//        List<BookInfo> returnList2 = bookInfoList.stream().filter(book -> book.getName().length() <= 10)
-//                .collect(Collectors.toList());
-//        System.out.println(returnList2);
-//    }
+    @Test
+    public void sum_stream_test() {
+        bookInfoList = new ArrayList<>();
+        double sum = bookInfoList.stream().mapToDouble(book -> book.getPrice()).sum();
+        System.out.println(sum);
+    }
 
 }

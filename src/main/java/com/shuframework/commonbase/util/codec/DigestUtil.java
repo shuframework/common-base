@@ -1,13 +1,14 @@
 package com.shuframework.commonbase.util.codec;
 
 
+import com.shuframework.commonbase.exception.UtilException;
 import com.shuframework.commonbase.util.lang.NumberSystemConvert;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * jdk自带的加密算法。 实际项目可以org.apache.commons.codec.digest.*
+ * jdk自带的加密算法。 实际项目也可以用org.apache.commons.codec.digest.*
  * md5、sha加密底层是java.security.MessageDigest;
  * 对外调用的加密方法常用的是 xxHex
  *
@@ -158,6 +159,7 @@ public class DigestUtil {
             mdInst = MessageDigest.getInstance(keyEnum.getKey());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+            throw new UtilException(e.getMessage());
         }
         // 使用指定的字节更新摘要
         mdInst.update(data);

@@ -109,22 +109,24 @@ public class MyBeanUtilTest {
 	
 	@Test
 	public void copy_test1() {
-		BookInfo bookInfo = new BookInfo(1, "aa");
+		BookInfo2 bookInfo = new BookInfo2(1, "aa");
 //		BookInfo bookInfo = new BookInfo(1, "aa", new Date());
 		
 		BookInfo2 bookInfo2 = new BookInfo2();
 		//BookInfo2 比BookInfo的属性少, 不能从BookInfo 往 BookInfo2 copy，反过来可以 见copy_test2()例子
-		MyBeanUtil.copy(bookInfo, bookInfo2);
+		MyBeanUtil.copyByField(bookInfo, bookInfo2);
 		System.out.println(bookInfo2);
 	}
 	
 	@Test
 	public void copy_test2() {
-		BookInfo2 bookInfo = new BookInfo2(1, "aa");
+		BookInfo2 bookInfo = new BookInfo2();
+		bookInfo.setId(1);
 		
-		BookInfo bookInfo2 = new BookInfo();
+		BookInfo3 bookInfo2 = new BookInfo3();
+		bookInfo2.setName("aa2");
 		//BookInfo2 比BookInfo的属性少
-		MyBeanUtil.copy(bookInfo, bookInfo2);
+		MyBeanUtil.copyByField(bookInfo, bookInfo2);
 		System.out.println(bookInfo2);
 	}
 	
@@ -142,8 +144,9 @@ public class MyBeanUtilTest {
 	@Test
 	public void deepCopy_test() {
 		BookInfo3 bookInfo = new BookInfo3(1, "aa");
-
-		BookInfo obj = (BookInfo)MyBeanUtil.deepCopy(bookInfo);
+//		//BookInfo3 cannot be cast to com.shuframework.jdkdemo.testmodel.BookInfo
+//		BookInfo obj = (BookInfo)MyBeanUtil.deepCopy(bookInfo);
+		BookInfo3 obj = (BookInfo3)MyBeanUtil.deepCopy(bookInfo);
 		System.out.println(obj);
 	}
 

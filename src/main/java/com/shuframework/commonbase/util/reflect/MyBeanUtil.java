@@ -115,21 +115,12 @@ public class MyBeanUtil {
 	 * @return
 	 */
 	public static Object getProperty(final Class clazz, String propertyName){
-//		PropertyDescriptor pd = getPropertyDescriptor(clazz, propertyName);
-//		Method readMethod = pd.getReadMethod();
-//		if (!readMethod.isAccessible()) {
-//			readMethod.setAccessible(true);
-//		}
 //		try {
-//			return readMethod.invoke(clazz.newInstance());
+//			return getProperty(clazz.newInstance(), propertyName);
 //		} catch (Exception e) {
 //			throw new RuntimeException("Could not read property '" + propertyName + "' to bean", e);
 //		}
-		try {
-			return getProperty(clazz.newInstance(), propertyName);
-		} catch (Exception e) {
-			throw new RuntimeException("Could not read property '" + propertyName + "' to bean", e);
-		}
+		return getProperty(newInstance(clazz), propertyName);
 	}
 	
 	/**
@@ -141,11 +132,8 @@ public class MyBeanUtil {
 	 */
 	@Deprecated
 	public static Object getPropertyByField(Object bean, String propertyName){
-		Field field = getDeclaredField(bean.getClass(), propertyName);
-		if (field == null){
-			throw new IllegalArgumentException("Could not find field [" + propertyName + "] on target [" + bean + "]");
-		}
 		try {
+            Field field = getDeclaredField(bean.getClass(), propertyName);
 			return field.get(bean);
 		} catch (Exception e) {
 			throw new RuntimeException("Could not read property '" + propertyName + "' to bean", e);
@@ -173,28 +161,19 @@ public class MyBeanUtil {
 	}
 	
 	/**
-	 * 设置Bean属性（建议不用这个）
+	 * 设置Bean属性
 	 * 
 	 * @param clazz
 	 * @param propertyName	属性名
 	 * @param value		属性值
 	 */
 	public static void setProperty(final Class clazz, String propertyName, Object value) {
-//		PropertyDescriptor pd = getPropertyDescriptor(clazz, propertyName);
-//		Method writeMethod = pd.getWriteMethod();
-//		if (!writeMethod.isAccessible()) {
-//			writeMethod.setAccessible(true);
-//		}
 //		try {
-//			writeMethod.invoke(clazz.newInstance(), value);
+//			setProperty(clazz.newInstance(), propertyName, value);
 //		} catch (Exception e) {
 //			throw new RuntimeException("Could not set property '" + propertyName + "' to bean", e);
 //		}
-		try {
-			setProperty(clazz.newInstance(), propertyName, value);
-		} catch (Exception e) {
-			throw new RuntimeException("Could not set property '" + propertyName + "' to bean", e);
-		}
+		setProperty(newInstance(clazz), propertyName, value);
 	}
 	
 	/**
@@ -206,7 +185,7 @@ public class MyBeanUtil {
 	 * @throws IllegalAccessException
 	 * @throws InvocationTargetException
 	 */
-	protected static Object getProperty(Object bean, PropertyDescriptor property)
+	private static Object getProperty(Object bean, PropertyDescriptor property)
 			throws IllegalAccessException, InvocationTargetException {
 		Method readMethod = property.getReadMethod();
 		if (!readMethod.isAccessible()) {
@@ -225,7 +204,7 @@ public class MyBeanUtil {
 	 * @throws IllegalAccessException
 	 * @throws InvocationTargetException
 	 */
-	protected static void setProperty(Object bean, PropertyDescriptor property, Object value)
+	private static void setProperty(Object bean, PropertyDescriptor property, Object value)
 			throws IllegalAccessException, InvocationTargetException {
 		Method writeMethod = property.getWriteMethod();
 		if (!writeMethod.isAccessible()) {
@@ -244,11 +223,8 @@ public class MyBeanUtil {
 	 */
 	@Deprecated
 	public static void setPropertyByField(Object bean, String propertyName, Object value) {
-		Field field = getDeclaredField(bean.getClass(), propertyName);
-		if (field == null){
-			throw new IllegalArgumentException("Could not find field [" + propertyName + "] on target [" + bean + "]");
-		}
 		try {
+            Field field = getDeclaredField(bean.getClass(), propertyName);
 			field.set(bean, value);
 		} catch (Exception e) {
 			throw new RuntimeException("Could not set property '" + propertyName + "' to bean", e);
@@ -259,40 +235,57 @@ public class MyBeanUtil {
 	 * 获得申明的字段, 如果有继承关系, 子类拿不到会去父类获取
 	 * 
 	 * @param clazz
-	 * @param fieldName
+	 * @param propertyName
 	 * @return
 	 */
-	@Deprecated
-	public static Field getDeclaredField(final Class clazz, final String fieldName) {
-		for (Class superClass = clazz; superClass != Object.class; superClass = superClass.getSuperclass()) {
-			try {
-				Field field = superClass.getDeclaredField(fieldName);
-				if(!field.isAccessible()){
-					field.setAccessible(true);
-				}
-				return field;
-			} catch (NoSuchFieldException e) {
-				// Field不在当前类定义,继续向上转型
-				continue;
-			}
-		}
-		return null;
-	}
+	public static Field getDeclaredField(final Class clazz, final String propertyName){
+        Field field = null;
+        try {
+            field = clazz.getDeclaredField(propertyName);
+        } catch (NoSuchFieldException e) {
+            throw new IllegalArgumentException("Could not find field [" + propertyName + "] on target [" + clazz + "]");
+        }
+        if(!field.isAccessible()){
+            field.setAccessible(true);
+        }
+        return field;
+    }
+
+    public static Field getDeclaredFieldHasSuper(final Class clazz, final String fieldName) {
+        for (Class superClass = clazz; superClass != Object.class; superClass = superClass.getSuperclass()) {
+            try {
+                Field field = superClass.getDeclaredField(fieldName);
+                if(!field.isAccessible()){
+                    field.setAccessible(true);
+                }
+                return field;
+            } catch (NoSuchFieldException e) {
+                // Field不在当前类定义,继续向上转型
+                continue;
+            }
+        }
+        return null;
+    }
 
 	
 	/**
-	 * 拷贝对象, src对象的属性 不能比dist对象 多
+	 * 拷贝对象, 跳过null
+	 * source对象的属性 不能比target对象 多
 	 * 
-	 * @param src	源对象
-	 * @param dist	需要赋值的对象
+	 * @param source	源对象
+	 * @param target	需要赋值的对象
 	 */
-	public static void copy(Object src, Object dist) {
-		PropertyDescriptor[] pdList = getPropertyDescriptorList(src.getClass());
+	@Deprecated
+	public static void copyByField(Object source, Object target) {
+		PropertyDescriptor[] pdList = getPropertyDescriptorList(source.getClass());
 		try {
 			for (PropertyDescriptor property : pdList) {
-				Object value = getProperty(src, property);
-				//这里存在找不到的情况
-				setProperty(dist, property, value);
+                String name = property.getName();
+                Object value = getPropertyByField(source, name);
+				//这里存在找不到的情况, 不判断则会null 进行覆盖
+				if (value != null) {
+					setPropertyByField(target, name, value);
+				}
 			}
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -304,11 +297,11 @@ public class MyBeanUtil {
 	 * src对象的属性 比dist对象 多, 那么多的属性dist 不会被赋值<br>
 	 * src对象的属性 比dist对象 少, 那么多的属性dist 不会被赋值<br>
 	 * 
-	 * @param src	源对象
-	 * @param dist	需要赋值的对象
+	 * @param source	源对象
+	 * @param target	需要赋值的对象
 	 */
-	public static void copyIgnoreException(Object src, Object dist) {
-		PropertyDescriptor[] pdList = getPropertyDescriptorList(src.getClass());
+	public static void copyIgnoreException(Object source, Object target) {
+		PropertyDescriptor[] pdList = getPropertyDescriptorList(source.getClass());
 		for (PropertyDescriptor property : pdList) {
 //			String key = property.getName();
 //			// 过滤class属性(由于在getPropertyDescriptorList获取的时候已经排除了所有可用不判断)
@@ -318,8 +311,10 @@ public class MyBeanUtil {
 //			}
 			try {
 				// 得到property对应的getter方法
-				Object value = getProperty(src, property);
-				setProperty(dist, property, value);
+				Object value = getProperty(source, property);
+				if (value != null) {
+					setProperty(target, property, value);
+				}
 			} catch (Exception e) {
 				//不推荐这样处理
 				continue;
